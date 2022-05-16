@@ -8,3 +8,5 @@ send a saturday covid email update to everyone on a google survey spreadsheet. B
 
 Email looks like image below 👇
 
+![image](https://github.com/acbass49/covid_email_update/blob/master/IMG_17E9A72EF318-1.jpeg)
+![image](https://github.com/acbass49/covid_email_update/blob/master/national.png)
