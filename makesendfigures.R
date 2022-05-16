@@ -194,16 +194,16 @@ p3 <- vax_total %>%
        subtitle = "Compared to entire US population of 332,859,432 people") +
   annotate(geom = "curve", xend = ymd(Sys.Date())-1, yend = one_dose_today$one_dose_prop,
            curvature = -0.3, arrow = arrow(length = unit(2, "mm")),
-           x = ymd(Sys.Date())-30, y = one_dose_today$one_dose_prop +.2) +
+           x = ymd(Sys.Date())-30, y = one_dose_today$one_dose_prop +.3) +
   annotate(geom = "text", x = ymd(Sys.Date())-33, 
-           y = one_dose_today$one_dose_prop +.2, 
+           y = one_dose_today$one_dose_prop +.3, 
            label = paste0(100*round(one_dose_today$one_dose_prop, 3), "% recieved just one dose"),
            hjust = "right", family = "Cairo", color = "purple", size = 12) +
   annotate(geom = "curve", xend = ymd(Sys.Date())-1, yend = vax_today$vax_prop,
            curvature = -0.3, arrow = arrow(length = unit(2, "mm")),
-           x = ymd(Sys.Date())-60, y = vax_today$vax_prop +.1) +
+           x = ymd(Sys.Date())-60, y = vax_today$vax_prop +.2) +
   annotate(geom = "text", x = ymd(Sys.Date())-63, 
-           y = vax_today$vax_prop +.1, 
+           y = vax_today$vax_prop +.2, 
            label = paste0(100*round(vax_today$vax_prop, 3), "% fully vaccinated"),
            hjust = "right", family = "Cairo", color = "deeppink3", size = 12) +
   scale_x_date(date_labels = "%b %d") +
@@ -299,16 +299,16 @@ for (email_state in unique(survey$state)) {
          subtitle = paste0("Compared to entire ", email_state, " population of ", state_data[state_data$State == email_state,]$Population, " people")) +
     annotate(geom = "curve", xend = ymd(Sys.Date())-1, yend = one_dose_today$one_dose_prop,
              curvature = -0.3, arrow = arrow(length = unit(2, "mm")),
-             x = ymd(Sys.Date())-30, y = one_dose_today$one_dose_prop +.2) +
+             x = ymd(Sys.Date())-30, y = one_dose_today$one_dose_prop +.3) +
     annotate(geom = "text", x = ymd(Sys.Date())-33,
-             y = one_dose_today$one_dose_prop +.2,
+             y = one_dose_today$one_dose_prop +.3,
              label = paste0(100*round(one_dose_today$one_dose_prop, 3), "% recieved just one dose"),
              hjust = "right", family = "Cairo", color = "purple", size = 12) +
     annotate(geom = "curve", xend = ymd(Sys.Date())-1, yend = vax_today$vax_prop,
              curvature = -0.3, arrow = arrow(length = unit(2, "mm")),
-             x = ymd(Sys.Date())-60, y = vax_today$vax_prop +.1) +
+             x = ymd(Sys.Date())-60, y = vax_today$vax_prop +.2) +
     annotate(geom = "text", x = ymd(Sys.Date())-63,
-             y = vax_today$vax_prop +.1,
+             y = vax_today$vax_prop +.2,
              label = paste0(100*round(vax_today$vax_prop, 3), "% fully vaccinated"),
              hjust = "right", family = "Cairo", color = "deeppink3", size = 12) +
       scale_x_date(date_labels = "%b %d") +
