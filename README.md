@@ -1,5 +1,5 @@
 # covid_email_update
-send a saturday covid email update to everyone on a google survey spreadsheet. Blog post written up about this [here](https://alexbass.me/projects/weekly-covid-update/). 
+sends a saturday covid email update to everyone on a google survey spreadsheet. Blog post written up about this [here](https://alexbass.me/projects/weekly-covid-update/). I originally wrote this for myself, but thought may benefit if others were interested.
 
 ### Cool features...
 1. Sends a weekly email to subscribers with 3 figures for user's state and 3 figures nationally (total 6): total cases, total deaths, vaccination rate.
