@@ -26,7 +26,9 @@ jobs:
         with:
           r-version: '4.0.2'
       # install renv package
-      - run: R -e 'install.packages("renv")'
+      - run: R -e 'install.packages(c("renv", "devtools"))'
+      - run: sudo apt install libsodium-dev #necessary software to implement incryption
+      - run: R -e 'devtools::install_github("jedisct1/libsodium")'
       - if: runner.os == 'macOS'
         run: brew install --cask xquartz
       # set up cache
