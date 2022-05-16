@@ -20,6 +20,7 @@ library(showtext)
 font_add_google("Cairo", family = "Cairo")
 showtext_auto()
 
+#getting encrypting functions
 source("encrypt_functions.R")
 
 #theme addon here
