@@ -38,6 +38,7 @@ additional_theme <-
 #do auto authorization
 #googlesheets4::gs4_deauth() Could use this function if sheet was public
 
+#imported function from repository
 json <- secret_read("encrypted_file.json")
 
 googlesheets4::gs4_auth(path = rawToChar(json))
