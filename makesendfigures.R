@@ -41,6 +41,7 @@ additional_theme <-
 #imported function from repository
 json <- secret_read("encrypted_file.json")
 
+#authenticating using service account
 googlesheets4::gs4_auth(path = rawToChar(json))
 
 survey <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Ud9zguI-R_ipnoZTAJTfUEq2tT-uU-ugJAttpMxgqaU/edit#gid=1289407448")
