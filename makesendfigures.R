@@ -50,6 +50,7 @@ survey <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Ud9
 survey <- survey[complete.cases(survey), ]
 names(survey) <- c("time", "email", "state")
 
+#there were a few dulicate surveys here
 survey <- survey[!duplicated(survey[,c("email", "state")]),]
 
 # Returns string without leading white space
