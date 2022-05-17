@@ -7,7 +7,7 @@ sends a saturday covid email update to everyone on a google survey spreadsheet. 
 3. No ads.
 
 ### Under the hood...
-Reads a google survey from [here](https://alexbass.me/projects/weekly-covid-update/), reads a google sheet from the survey (using an encrypted token from a  google service account), runs an analysis script in R that creates a few figures, and sends an email from emails read in previously.
+The google survey from [here](https://alexbass.me/projects/weekly-covid-update/) contains emails of subscribers is connected to a google sheet. This repository reads a google sheet from the survey (using an encrypted token from a  google service account), runs an analysis script in R that wrangles data and creates a few figures, then sends an email. This is (obviously, since you are reading this) a public repository which contains encrypted tokens, but no visible personal information, so feel free to browse.
 
 Email looks like image below (but updated to the current time) 👇
 
