@@ -245,6 +245,7 @@ ending <- ymd(Sys.Date())
 
 date_interval <- starting %--% ending
 
+#grouping states together so only make figures for each state once
 for (email_state in unique(survey$state)) {
   deaths_today <- death_by_state %>%
   filter(date %within% date_interval, State == email_state) %>%
