@@ -61,7 +61,6 @@ trim.trailing <- function (x) sub("\\s+$", "", x)
 
 survey$email <- trim.trailing(trim.leading(survey$email))
 
-
 #data from usafacts.com
 cases <- read.csv("https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv")
 deaths <- read.csv("https://static.usafacts.org/public/data/covid-19/covid_deaths_usafacts.csv")
