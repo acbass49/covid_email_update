@@ -223,7 +223,6 @@ patchwork + plot_annotation(
 
 ggsave("national.png", units = "in", width = 6.92, height = 6.85)
 
-
 #determining if cases are increasing or decreasing in a state
 starting <- ymd(Sys.Date())-12
 ending <- ymd(Sys.Date())-5
