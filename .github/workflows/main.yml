@@ -1,4 +1,4 @@
-name: run_job_2
+name: send_emails
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job
-  run_thingy:
+  send_emails:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     
@@ -28,8 +28,6 @@ jobs:
       # install renv package
       - run: R -e 'install.packages(c("renv", "devtools"))'
       - run: sudo apt install libsodium-dev #necessary software to implement incryption
-      - if: runner.os == 'macOS'
-        run: brew install --cask xquartz
       # set up cache
       - name: Cache packages
         uses: actions/cache@v1
