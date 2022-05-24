@@ -26,7 +26,7 @@ jobs:
         with:
           r-version: '4.0.2'
       # install renv package
-      - run: R -e 'install.packages(c("renv", "devtools"))'
+      - run: R -e 'install.packages("renv")'
       - run: sudo apt install libsodium-dev #necessary software to implement incryption
       # set up cache
       - name: Cache packages
