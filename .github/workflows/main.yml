@@ -2,7 +2,7 @@ name: send_emails
 
 on:
   schedule:
-    - cron: "0 * * * *" #0 11 * * 6 # Every Saturday at 11am UTC
+    - cron: "0 11 * * 6" # Every Saturday at 11am UTC
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,7 +16,7 @@ jobs:
         RENV_PATHS_ROOT: ~/.local/share/renv
         SECRETS: ${{ secrets.SECRETS }}
         COVID_EMAIL_UPDATE_PASSWORD: ${{ secrets.COVID_EMAIL_UPDATE_PASSWORD }}
-        SEND_ME_ONLY: YEP
+        SEND_ME_ONLY: NOPE
     #
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
