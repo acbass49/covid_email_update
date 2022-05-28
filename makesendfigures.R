@@ -47,6 +47,8 @@ googlesheets4::gs4_auth(path = rawToChar(json))
 #reading google sheet into R
 survey <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Ud9zguI-R_ipnoZTAJTfUEq2tT-uU-ugJAttpMxgqaU/edit#gid=1289407448")
 
+if (Sys.getenv("SEND_ME_ONLY") == "YES") survey <- survey[1,]
+
 survey <- survey[complete.cases(survey), ]
 names(survey) <- c("time", "email", "state")
 
