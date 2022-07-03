@@ -46,6 +46,7 @@ googlesheets4::gs4_auth(path = rawToChar(json))
 
 #reading google sheet into R
 survey <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Ud9zguI-R_ipnoZTAJTfUEq2tT-uU-ugJAttpMxgqaU/edit#gid=1289407448")
+unsubscribers <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/18LBMAMiM9431aXrP9835M8muuTnTLWZw4QoxC5GtTjo/edit?resourcekey#gid=1328252929")
 
 if (Sys.getenv("SEND_ME_ONLY") == "YEP") survey <- survey[1,] #my email is the first one in the googlesheet
 
@@ -62,6 +63,17 @@ trim.leading <- function (x)  sub("^\\s+", "", x)
 trim.trailing <- function (x) sub("\\s+$", "", x)
 
 survey$email <- trim.trailing(trim.leading(survey$email))
+
+if (NROW(unsubscribers)>0){
+  names(unsubscribers) <- c('time', 'email')
+  
+  unsubscribers$email <- toupper(trim.trailing(trim.leading(unsubscribers$email)))
+  email_match <- toupper(survey$email)
+  
+  indx <- !unsubscribers$email %in% email_match
+  
+  survey <- survey[indx,]
+}
 
 #data from usafacts.com
 cases <- read.csv("https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv")
