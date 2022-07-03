@@ -342,7 +342,9 @@ for (email_state in unique(survey$state)) {
     ) %>%
       emayili::to(emails) %>%
       emayili::text(paste0("Hi ",person_name,"!\n\nHere is your weekly check in:\n\n","   -", "This week, cases are ", toupper(insert_in_email), " nationally.\n","   -The national full vaccination rate is at ",national_vax,"%.\n","   -The full vaccination rate in ", email_state, " is ", paste0(100*round(vax_today$vax_prop, 3), "%.\n\n"))) %>%
-      emayili::text("\n\nCheck out the 2 images below for more COVID info. If you are still left wanting, USAfacts.com might help. Unsubscribe by replying. \n\nHope you have a great Saturday:)\n\nAlex") %>%
+      emayili::text("\n\n") %>%
+      emayili::render("Check out the 2 images below for more COVID info. If you are still left wanting, [USAfacts.org](https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/) might help. Unsubscribe by entering your email at [this link](https://forms.gle/mgTjmAnhjQdx1ifd9)") %>% 
+      emayili::text("\n\nHope you have a great Saturday:)\n\nAlex") %>% 
       emayili::attachment(path = "national.png") %>%
       emayili::attachment(path = "state.png")
 
