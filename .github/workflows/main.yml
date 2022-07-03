@@ -16,7 +16,7 @@ jobs:
         RENV_PATHS_ROOT: ~/.local/share/renv
         SECRETS: ${{ secrets.SECRETS }}
         COVID_EMAIL_UPDATE_PASSWORD: ${{ secrets.COVID_EMAIL_UPDATE_PASSWORD }}
-        SEND_ME_ONLY: NOPE
+        SEND_ME_ONLY: YEP
     #
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
