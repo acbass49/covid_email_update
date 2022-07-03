@@ -70,7 +70,7 @@ if (NROW(unsubscribers)>0){
   unsubscribers$email <- toupper(trim.trailing(trim.leading(unsubscribers$email)))
   email_match <- toupper(survey$email)
   
-  indx <- !unsubscribers$email %in% email_match
+  indx <- !email_match %in% unsubscribers$email
   
   survey <- survey[indx,]
 }
